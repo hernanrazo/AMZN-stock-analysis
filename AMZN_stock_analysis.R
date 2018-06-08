@@ -1,33 +1,19 @@
-dataset <- AMZN
 
-attach(dataset)
+library(quantmod)
+library(plotly)
+library(dplyr)
 
-#Find mean of all values in Open
-mean(Open)
+#get dataset
+#in this case, stock records for AMZN
+dataset <- getSymbols("AMZN", src = "yahoo", from = start, to = end)
+start <- as.Date("1997-05-15")
+end <- as.Date("2018-06-01")
 
-#Find mean of all values in High
-mean(High)
+#dataset <- data.frame(dataset)
 
-#Find mean of all values in Low
-mean(Low)
-
-#Find mean of all values in Close
-mean(Close)
-
-#Find mean of all values in Adj Close
-mean(Adj.Close)
-
-#Find mean of all values in Volume
-mean(Volume)
-
-#Find and print day with highest closing stock value
-#Which day had the highest growth between low and high?
-
-
-
-
-
-
-
-
+setwd("~/Users/hernanrazo/RProjects/AMZN_stock_analysis")
+getwd()
+png(filename="faithful.png")
+plot(AMZN[, "AMZN.Close"], main = "AMZN")
+dev.off()
 
