@@ -30,3 +30,14 @@ candleChart(df,
             theme = "white")
 dev.off()
 
+
+#return highest closing value
+max(df.Open, na.rm=TRUE)
+
+
+
+
+
+
+
+
