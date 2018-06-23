@@ -2,6 +2,7 @@
 library(quantmod)
 library(plotly)
 library(dplyr)
+library(magrittr)
 
 #get dataset
 #in this case, stock records for AMZN
@@ -29,7 +30,6 @@ candleChart(df,
             dn.col = "red",
             theme = "white")
 dev.off()
-
 
 #return highest closing value
 max(df.Open, na.rm=TRUE)
